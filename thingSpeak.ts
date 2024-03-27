@@ -18,6 +18,18 @@ namespace ESP8266_01 {
     export function isThingspeakUploaded(): boolean {
         return thingspeakUploaded
     }
+    /**
+     * Check if ESP8266 successfully connected to ThingSpeak Return true if connect to ThingSpeak successfully.
+     */
+    //% subcategory="ThingSpeak"
+    //% weight=30
+    //% blockGap=8
+    //% blockId=esp8266_is_thingspeak_data_connected
+    //% block="ThingSpeak connected"
+    export function isThingSpeakConnected(): Boolean {
+        return thingspeakConnected
+    }
+
 
     /**
      * Upload data to ThingSpeak (Data can only be updated to Thingspeak every 15 seconds).
@@ -32,7 +44,7 @@ namespace ESP8266_01 {
      * @param field8 Data for Field 8.
      */
     //% subcategory="ThingSpeak"
-    //% weight=29
+    //% weight=30
     //% blockGap=8
     //% blockId=esp8266_upload_thingspeak
     //% block="Upload data to ThingSpeak|Write API key %writeApiKey|Field 1 %field1||Field 2 %field2|Field 3 %field3|Field 4 %field4|Field 5 %field5|Field 6 %field6|Field 7 %field7|Field 8 %field8"
@@ -88,12 +100,5 @@ namespace ESP8266_01 {
         thingspeakUploaded = true
         return
     }
-    /**
-       * Check if ESP8266 successfully connected to ThingSpeak
-       */
-    //% block="ThingSpeak connected ?"
-    export function isThingSpeakConnected() : Boolean{
-        return thingspeakConnected
-    }
-
+    
 }
