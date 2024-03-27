@@ -4,6 +4,7 @@ const THINGSPEAK_API_URL = "api.thingspeak.com"
 namespace ESP8266_01 {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
     let thingspeakUploaded = false
+    let thingspeakConnected = false
 
     /**
      * Return true if data is uploaded to ThingSpeak successfully.
@@ -13,6 +14,7 @@ namespace ESP8266_01 {
     //% blockGap=8
     //% blockId=esp8266_is_thingspeak_data_uploaded
     //% block="ThingSpeak data uploaded"
+    //% writeApiKey.defl="api_key"
     export function isThingspeakUploaded(): boolean {
         return thingspeakUploaded
     }
@@ -52,6 +54,7 @@ namespace ESP8266_01 {
 
         // Connect to ThingSpeak. Return if failed.
         if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",80", "OK", 10000) == false) return
+            else thingspeakConnected = true
 
         // Construct the data to send.
         let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
@@ -85,4 +88,12 @@ namespace ESP8266_01 {
         thingspeakUploaded = true
         return
     }
+    /**
+       * Check if ESP8266 successfully connected to ThingSpeak
+       */
+    //% block="ThingSpeak connected ?"
+    export function isThingSpeakConnected() : Boolean{
+        return thingspeakConnected
+    }
+
 }

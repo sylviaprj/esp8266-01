@@ -1,7 +1,7 @@
 /**
  * MakeCode extension for ESP8266-01 Wifi modules 
  */
-//% color=#F19509 icon="\uf1eb" block="ESP8266 ThingSpeak"
+//% color=#F19509 icon="\uf1eb" block="ESP8266-01"
 namespace ESP8266_01 {
 
     let wifi_connected: boolean = false
