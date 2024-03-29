@@ -19,14 +19,14 @@ namespace ESP8266_01 {
         return thingspeakUploaded
     }
     /**
-     * Check if ESP8266 successfully connected to ThingSpeak Return true if connect to ThingSpeak successfully.
+     * Return true if ESP8266-01 is connected to ThingSpeak successfully.
      */
     //% subcategory="ThingSpeak"
     //% weight=30
     //% blockGap=8
     //% blockId=esp8266_is_thingspeak_data_connected
     //% block="ThingSpeak connected"
-    export function isThingSpeakConnected(): Boolean {
+    export function isThingSpeakConnected(): boolean {
         return thingspeakConnected
     }
 

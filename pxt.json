@@ -9,7 +9,8 @@
     "files": [
         "main.ts",
         "README.md",
-        "thingSpeak.ts"
+        "thingSpeak.ts",
+        "blynk.ts"
     ],
     "testFiles": [
         "test.ts"
